@@ -1,4 +1,4 @@
-# Minify HTML for Bolt CMS
+# Minify HTML extension for Bolt CMS
 
 Minify your HTML output.
 
