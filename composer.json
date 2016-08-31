@@ -6,6 +6,8 @@
         "bolt/bolt": "^3.0",
         "wyrihaximus/html-compress": "^1.2"
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "license": "MIT",
     "authors": [
         {
