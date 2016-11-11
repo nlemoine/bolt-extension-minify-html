@@ -12,8 +12,6 @@ use WyriHaximus\HtmlCompress\Factory;
 class MinifyHtmlExtension extends SimpleExtension
 {
 
-    private $version = 'v0.1.0';
-
     /**
      * {@inheritdoc}
      */
