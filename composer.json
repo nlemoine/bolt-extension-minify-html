@@ -3,8 +3,7 @@
     "description": "Minify HTML",
     "type": "bolt-extension",
     "require": {
-        "bolt/bolt": "^3.0",
-        "wyrihaximus/html-compress": "^1.2.1"
+        "bolt/bolt": "^3.0"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
@@ -17,7 +16,8 @@
     ],
     "autoload": {
         "psr-4": {
-            "Bolt\\Extension\\Hellonico\\MinifyHtml\\": "src"
+            "Bolt\\Extension\\Hellonico\\MinifyHtml\\": "src/",
+            "WyriHaximus\\HtmlCompress\\": "vendor/wyrihaximus/html-compress/src/"
         }
     },
     "extra": {
