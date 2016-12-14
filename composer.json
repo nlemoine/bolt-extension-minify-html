@@ -2,6 +2,7 @@
     "name": "hellonico/minify-html",
     "description": "Minify HTML",
     "type": "bolt-extension",
+    "keywords": [ "html", "compress", "compression", "minify", "minification", "minify html", "compress html"],
     "require": {
         "bolt/bolt": "^3.0"
     },
@@ -23,6 +24,7 @@
         }
     },
     "extra": {
-        "bolt-class": "Bolt\\Extension\\Hellonico\\MinifyHtml\\MinifyHtmlExtension"
+        "bolt-class": "Bolt\\Extension\\Hellonico\\MinifyHtml\\MinifyHtmlExtension",
+        "bolt-icon": "minify-html-icon.png"
     }
 }
