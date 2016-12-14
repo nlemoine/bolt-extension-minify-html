@@ -1,0 +1,28 @@
+{
+    "name": "hellonico/minify-html",
+    "description": "Minify HTML",
+    "type": "bolt-extension",
+    "require": {
+        "bolt/bolt": "^3.0"
+    },
+    "require-dev": {
+        "wyrihaximus/html-compress": "^1.2.1"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nicolas Lemoine",
+            "email": "dev@helloni.co"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Bolt\\Extension\\Hellonico\\MinifyHtml\\": "src/"
+        }
+    },
+    "extra": {
+        "bolt-class": "Bolt\\Extension\\Hellonico\\MinifyHtml\\MinifyHtmlExtension"
+    }
+}
