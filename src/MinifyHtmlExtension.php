@@ -10,6 +10,7 @@ if (is_file($autoload)) {
 use Bolt\Extension\SimpleExtension;
 use Bolt\Controller\Zone;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
 use WyriHaximus\HtmlCompress\Factory;
@@ -25,6 +26,10 @@ class MinifyHtmlExtension extends SimpleExtension
         $dispatcher->addListener(KernelEvents::RESPONSE, function (FilterResponseEvent $event) {
             $response = $event->getResponse();
             $request = $event->getRequest();
+
+            if ($response instanceof StreamedResponse) {
+                return;
+            }
 
             $app = $this->getContainer();
 
