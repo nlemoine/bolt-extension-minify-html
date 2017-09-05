@@ -28,21 +28,29 @@ class MinifyHtmlExtension extends SimpleExtension
             $request = $event->getRequest();
 
             if ($response instanceof StreamedResponse) {
-                return;
+                return $response;
+            }
+
+            $contentType = $response->headers->get('Content-Type');
+
+            if( strpos($contentType, 'text/html') === false ) {
+                return $response;
             }
 
             $app = $this->getContainer();
 
             if (!Zone::isFrontend($request) || $app['config']->get('general/debug')) {
-                return;
+                return $response;
             }
 
             if (!class_exists('WyriHaximus\HtmlCompress\Factory')) {
-                return;
+                return $response;
             }
 
             $parser = Factory::construct();
             $response->setContent($parser->compress($response->getContent()));
-        });
+
+            return $response;
+        }, -PHP_INT_MAX);
     }
 }
